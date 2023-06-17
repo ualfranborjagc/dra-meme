@@ -1,7 +1,17 @@
-<app-sidenav (onToggleSideNav)="onToggleSideNav($event)"></app-sidenav>
-<app-body
-    [collapsed]="isSideNavCollapsed"
-    [screenWidth]="screenWidth"
->
-</app-body>
-
+<div class="maincontainer">
+  <div class = "barratareas"></div>
+  <header class="header">
+    <div class="title">
+      <h1 class="logo"><a href="#">DRA-Meme</a></h1>
+      <img
+        class="img"
+        src="https://upload.wikimedia.org/wikipedia/en/9/9a/Trollface_non-free.png"
+      />
+    </div>
+    <ul class="main-nav">
+      <li><a href="./frontend/src/app/components/meme/meme.component.html">Memes</a></li>
+      <li><a href="./frontend/src/app/components/fact/fact.component.html">Facts</a></li>
+      <li><a href="./frontend/src/app/components/contact/contact.component.html">Contact</a></li>
+    </ul>
+  </header>
+</div>
