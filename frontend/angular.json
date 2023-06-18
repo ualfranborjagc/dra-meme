@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "DraMeme": {
+    "DRA-Meme": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "DraMeme:build:production"
+              "browserTarget": "DRA-Meme:build:production"
             },
             "development": {
-              "browserTarget": "DraMeme:build:development"
+              "browserTarget": "DRA-Meme:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "DraMeme:build"
+            "browserTarget": "DRA-Meme:build"
           }
         },
         "test": {
