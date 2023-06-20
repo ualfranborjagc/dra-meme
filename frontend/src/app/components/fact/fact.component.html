@@ -1,8 +1,8 @@
 <div class="maincontainer">
   <div class="factlist">
-    <div class="factbox">
+    <div class="factbox" *ngFor=" let fact of facts" [routerLink]="['/factsdet', fact.fact]">
       <div class="facttext">
-        <h1 class="facttitle">Tu madre tenia una polla que ya la quisiera yooooooo, que pena me dio tu padre el dia en que se enteroooooooo, que fue la noche de bodas</h1>
+        <h1 class="facttitle">{{fact.fact}}</h1>
       </div>
     </div>
   </div>

@@ -1,12 +1,8 @@
 <div class="maincontainer">
-  <div class="memelist">
-    <div
-      *ngFor="let meme of memes"
-      class="memebox"
-      [routerLink]="['/memedet', meme.image]"
-    >
+  <div class="memefavlist">
+    <div class="memefavbox">
       <div class="mememarco">
-        <img class="memeimg" src="{{ meme.image }}" />
+        <img class="memeimg" src="https://img2.rtve.es/im/5805132/?w=900" />
       </div>
       <button class="bookmarkBtn">
         <span class="IconContainer">
@@ -16,7 +12,7 @@
             ></path>
           </svg>
         </span>
-        <p class="text">Save</p>
+        <p class="text">Quit</p>
       </button>
     </div>
   </div>

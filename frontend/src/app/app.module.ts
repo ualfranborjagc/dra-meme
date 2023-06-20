@@ -9,6 +9,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 import { MemeDetailComponent } from './components/meme-detail/meme-detail.component';
 import { FactDetailComponent } from './components/fact-detail/fact-detail.component';
+import { FavoriteComponent } from './components/favorite/favorite.component';
+import { ApiServiceService } from './api-service.service';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -19,13 +23,15 @@ import { FactDetailComponent } from './components/fact-detail/fact-detail.compon
     MenuComponent,
     MemeDetailComponent,
     FactDetailComponent,
+    FavoriteComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ApiServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
