@@ -1,0 +1,10 @@
+<div class="maincontainer">
+  <div class="factlist">
+    <div class="factbox" *ngFor=" let fact of facts" [routerLink]="['/factsdet', fact.fact]">
+      <div class="facttext">
+        <h1 class="facttitle">{{fact.fact}}</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
