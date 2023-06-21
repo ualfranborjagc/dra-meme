@@ -13,9 +13,7 @@ const routes: Routes = [
   { path: 'facts', component: FactComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'favorites', component: FavoriteComponent },
-  //{ path: 'memedet', component: MemeDetailComponent },
   { path: 'memedet/:url', component: MemeDetailComponent },
-  //{ path: 'factsdet', component: FactDetailComponent },
   { path: 'factsdet/:fact', component: FactDetailComponent },
   { path: '', redirectTo: 'memes', pathMatch: 'full' }
 ];

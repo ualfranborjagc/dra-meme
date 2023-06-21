@@ -140,15 +140,17 @@ public class MemeController {
         }
     }
 
-    // Endpoint para agregar un meme a un favorito
-    @PostMapping("/favoritos/{favoritoId}/memes")
-    public ResponseEntity<Favoritos> addMemeToFavorito(@PathVariable Long favoritoId, @RequestBody Meme meme) {
-        Favoritos favoritos = favoritosRepository.findById(favoritoId).orElse(null);
 
-        if (favoritos != null && meme != null) {
-            favoritos.getMemes().add(meme);
-            Favoritos updatedFavoritos = favoritosRepository.save(favoritos);
-            return new ResponseEntity<>(updatedFavoritos, HttpStatus.OK);
+    @PostMapping("/{favoritoId}/favoritos")
+    public ResponseEntity<Favoritos> agregarFavorito(
+            @PathVariable Long favoritoId,
+            @RequestBody Meme meme) {
+        Favoritos favorito = favoritosRepository.findById(favoritoId).orElse(null);
+
+        if (favorito != null) {
+            favorito.agregarMeme(meme);
+            favoritosRepository.save(favorito);
+            return new ResponseEntity<>(HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }

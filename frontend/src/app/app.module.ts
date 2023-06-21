@@ -12,6 +12,8 @@ import { FactDetailComponent } from './components/fact-detail/fact-detail.compon
 import { FavoriteComponent } from './components/favorite/favorite.component';
 import { ApiServiceService } from './api-service.service';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -29,7 +31,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [ApiServiceService],
   bootstrap: [AppComponent]

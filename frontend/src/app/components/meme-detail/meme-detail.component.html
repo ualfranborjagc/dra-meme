@@ -56,7 +56,7 @@
   align-items: center;
   cursor: pointer;
   transition-duration: .3s;
-  margin-top: 2rem;
+  margin-top: 5.5rem;
   margin-left: 25rem;
   overflow: hidden;
 }
@@ -114,9 +114,7 @@
     <div class="memebox">
       <div class="mememarco">
         <img class="memeimg" src="{{imgUrl}}" />
-        <!--<img class="memeimg" src="https://i.imgflip.com/1ur9b0.jpg"/>-->
       </div>
-      <h1 class="memefav">Meme fav: yes/no</h1>
       <button class="bookmarkBtn">
         <span class="IconContainer">
           <svg viewBox="0 0 384 512" height="0.9em" class="icon">
@@ -128,5 +126,6 @@
         <p class="text">Save</p>
       </button>
     </div>
+    <div *ngIf=""></div>
   </body>
 </html>

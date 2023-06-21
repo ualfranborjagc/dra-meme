@@ -43,6 +43,15 @@ public class Favoritos {
         this.memes = memes;
     }
 
+    public void agregarMeme(Meme meme) {
+        memes.add(meme);
+        meme.setFavoritos(this);
+    }
+
+    public void eliminarMeme(Meme meme) {
+        memes.remove(meme);
+        meme.setFavoritos(this);
+    }
     
 }
 

@@ -30,7 +30,6 @@
   margin-left: 2.5rem;
 }
 
-
 .memeimg {
   width: 100%;
   height: 100%;
@@ -47,24 +46,23 @@
   display: flex;
   align-items: center;
   cursor: pointer;
-  transition-duration: .3s;
+  transition-duration: 0.3s;
   margin-top: 2rem;
   margin-left: 13rem;
   overflow: hidden;
 }
 
-
 .IconContainer {
   width: 30px;
   height: 30px;
-  background: linear-gradient(to bottom, rgb(255, 80, 80),rgb(115, 28, 28));
+  background: linear-gradient(to bottom, rgb(255, 80, 80), rgb(115, 28, 28));
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   z-index: 2;
-  transition-duration: .3s;
+  transition-duration: 0.3s;
 }
 
 .icon {
@@ -80,25 +78,56 @@
   font-weight: bold;
   color: white;
   z-index: 1;
-  transition-duration: .3s;
+  transition-duration: 0.3s;
   font-size: 1.04em;
 }
 
 .bookmarkBtn:hover .IconContainer {
   width: 90px;
   border-radius: 40px;
-  transition-duration: .3s;
+  transition-duration: 0.3s;
 }
 
 .bookmarkBtn:hover .text {
   transform: translate(10px);
   width: 0;
   font-size: 0;
-  transition-duration: .3s;
+  transition-duration: 0.3s;
 }
 
 .bookmarkBtn:active {
   transform: scale(0.95);
-  transition-duration: .3s;
+  transition-duration: 0.3s;
 }
 
+.metadataContainer {
+  display: flex;
+  width: 20rem;
+  height: 5rem;
+  flex-direction: row;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+
+  .metadataInput {
+    width: 100%;
+    height: 2rem;
+    border-radius: 1rem;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+  }
+  .confirmBtn {
+    width: 7rem;
+    height: 2.5rem;
+    border-radius: 1.5rem;
+    background-color: #161b22;
+    color: white;
+    border: none;
+    margin-left: 1rem;
+    cursor: pointer;
+    transition-duration: 0.3s;
+  }
+  .title {
+    font-weight: bold;
+    color: white;
+  }
+}

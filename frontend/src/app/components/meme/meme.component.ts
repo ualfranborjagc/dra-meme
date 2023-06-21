@@ -8,16 +8,40 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./meme.component.css'],
 })
 export class MemeComponent implements OnInit {
-  liked = false;
   memes: any[] = [];
-  img: string = 'https://i.imgflip.com/1ur9b0.jpg';
+  popup: boolean = false;
+  opciones: any[] = [];
+  filtro: any[] = [];
+  seleccion: string = '';
+  idFav:any;
+  imgMeme: string = '';
   constructor(private apiService: ApiServiceService) {}
   ngOnInit(): void {
-    //this.getMeme();
+    this.getMeme();
+    this.getAllFavorites();
   }
-  toggleLike() {
-    this.liked = !this.liked;
+
+  opcionesSel() {
+    this.filtro = this.opciones.filter((opcion) =>
+      opcion.toLowerCase().startsWith(this.seleccion.toLowerCase())
+    );
+    console.log(this.filtro);
   }
+  actualizarEntrada(opcion: string, id: any) {
+    this.seleccion = opcion;
+    this.idFav = id;
+    this.filtro = [];
+  }
+
+  popupMeme(imgMeme: string) {
+    this.imgMeme = imgMeme;
+    this.popup = true;
+  }
+
+  closepopupMeme() {
+    this.popup = false;
+  }
+
   getMeme() {
     this.apiService.getMemes().subscribe(
       (data) => {
@@ -25,6 +49,32 @@ export class MemeComponent implements OnInit {
         console.log(this.memes);
       },
       (error) => {
+        console.log(error);
+      }
+    );
+  }
+  addFavorite() {
+    var meme = {
+      imageUrl: this.imgMeme,
+    };
+    this.apiService.addFavorite(meme, this.idFav).subscribe(
+      (response: any) => {
+        console.log(response);
+      },
+      (error: any) => {
+        console.log(error);
+      }
+    );
+    this.idFav = '';
+  }
+  //Mostrar favoritos
+  getAllFavorites() {
+    this.apiService.getAllFavorites().subscribe(
+      (response: any) => {
+        this.opciones = response;
+        console.log(this.opciones);
+      },
+      (error: any) => {
         console.log(error);
       }
     );
