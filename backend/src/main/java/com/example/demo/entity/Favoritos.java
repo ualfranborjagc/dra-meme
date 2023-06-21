@@ -2,10 +2,13 @@ package com.example.demo.entity;
 
 import javax.persistence.*;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.util.List;
 
+@CrossOrigin(origins = "*")
 @Entity
 @Table(name = "favoritos")
 public class Favoritos {

@@ -2,8 +2,11 @@ package com.example.demo.entity;
 
 import javax.persistence.*;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+@CrossOrigin(origins = "*")
 @Entity
 @Table(name = "meme")
 public class Meme {
